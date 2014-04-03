@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140402023148) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "garbages", force: true do |t|
     t.string   "name"
     t.string   "image"
@@ -28,6 +31,6 @@ ActiveRecord::Schema.define(version: 20140402023148) do
     t.datetime "updated_at"
   end
 
-  add_index "products", ["garbage_id"], name: "index_products_on_garbage_id"
+  add_index "products", ["garbage_id"], name: "index_products_on_garbage_id", using: :btree
 
 end
