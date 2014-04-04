@@ -1,10 +1,10 @@
-<h1>Listing garbages</h1>
+<h1>Lista de classificação</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Image</th>
+      <th>Nome</th>
+      <th>Imagem</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,9 +16,8 @@
       <tr>
         <td><%= garbage.name %></td>
         <td><%= garbage.image %></td>
-        <td><%= link_to 'Show', garbage %></td>
-        <td><%= link_to 'Edit', edit_garbage_path(garbage) %></td>
-        <td><%= link_to 'Destroy', garbage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_garbage_path(garbage) %></td>
+        <td><%= link_to 'Apagar', garbage, method: :delete, data: { confirm: 'Confirma?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Garbage', new_garbage_path %>
+<%= link_to 'Nova classificação', new_garbage_path %>

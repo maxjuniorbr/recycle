@@ -1,15 +1,11 @@
 class GarbagesController < ApplicationController
+  before_action :authenticate
   before_action :set_garbage, only: [:show, :edit, :update, :destroy]
 
   # GET /garbages
   # GET /garbages.json
   def index
     @garbages = Garbage.all
-  end
-
-  # GET /garbages/1
-  # GET /garbages/1.json
-  def show
   end
 
   # GET /garbages/new
@@ -28,7 +24,7 @@ class GarbagesController < ApplicationController
 
     respond_to do |format|
       if @garbage.save
-        format.html { redirect_to @garbage, notice: 'Garbage was successfully created.' }
+        format.html { redirect_to garbages_path, notice: 'Lixo criado com sucesso.' }
         format.json { render action: 'show', status: :created, location: @garbage }
       else
         format.html { render action: 'new' }
@@ -42,7 +38,7 @@ class GarbagesController < ApplicationController
   def update
     respond_to do |format|
       if @garbage.update(garbage_params)
-        format.html { redirect_to @garbage, notice: 'Garbage was successfully updated.' }
+        format.html { redirect_to garbages_path, notice: 'Lixo alterado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

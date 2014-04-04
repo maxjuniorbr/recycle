@@ -1,11 +1,11 @@
-<h1>Listing products</h1>
+<h1>Lista de lixo</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Image</th>
-      <th>Garbage</th>
+      <th>Nome</th>
+      <th>Imagem</th>
+      <th>Classificação do lixo</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,9 +18,8 @@
         <td><%= product.name %></td>
         <td><%= product.image %></td>
         <td><%= product.garbage.name %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Editar', edit_product_path(product) %></td>
+        <td><%= link_to 'Apagar', product, method: :delete, data: { confirm: 'Confirma?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'Novo lixo', new_product_path %>

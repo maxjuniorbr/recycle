@@ -11,3 +11,227 @@
  *= require_self
  *= require_tree .
  */
+
+* {
+margin:0 auto;
+}
+
+body {
+background-color:#fff;
+color:#333;
+}
+
+body,p,ol,ul,td {
+font-family:verdana, arial, helvetica, sans-serif;
+font-size:13px;
+line-height:18px;
+}
+
+pre {
+background-color:#eee;
+font-size:11px;
+padding:10px;
+}
+
+p {
+padding:5px;
+}
+
+a {
+color:#D95E16;
+padding:0 2px;
+text-decoration:none;
+}
+
+a:hover {
+background-color:#FF813C;
+color:#FFF;
+}
+
+.notice {
+color:green;
+}
+
+.alert {
+color:red;
+}
+
+#header,#main,#footer {
+width:800px;
+}
+
+#header {
+border-bottom:5px solid #333;
+color:#333;
+font-family:"Myriad Web Pro",Helvetica,Arial,sans-serif;
+height:35px;
+letter-spacing:1px;
+padding:15px 0;
+}
+
+#header #user_bar {
+float:right;
+font-size:10px;
+}
+
+#footer {
+border-top:5px solid #C1C1C1;
+clear:both;
+font-size:11px;
+margin-top:10px;
+padding:10px 0;
+text-align:center;
+}
+
+#header h1 {
+float:left;
+font-size:30px;
+padding-top:14px;
+}
+
+#header h1 a {
+color:#000;
+}
+
+#header h1 a:hover {
+background-color:#FFF;
+border-bottom:4px solid #ccc;
+color:#000;
+}
+
+#header p {
+float:right;
+}
+
+#main h1 {
+border-bottom:1px solid #bbb;
+font-size:16px;
+margin-bottom:10px;
+padding:10px 0;
+}
+
+#main table {
+margin:0;
+}
+
+#main form {
+text-align:left;
+}
+
+#main form br {
+display:none;
+float:left;
+}
+
+#main form label {
+background-color:#F0F0F0;
+border:2px solid #ccc;
+display:block;
+float:left;
+line-height:21px;
+margin-right:10px;
+padding-right:10px;
+text-align:right;
+vertical-align:center;
+width:150px;
+}
+
+#main form label.check_box_label {
+background-color:#FFF;
+border:none;
+display:inline;
+line-height:21px;
+padding-right:10px;
+text-align:right;
+vertical-align:center;
+width:auto;
+}
+
+#main form .field,#main form .actions {
+clear:both;
+padding-top:10px;
+}
+
+#main form input[type=text],#main form input[type=password],#main form textarea {
+border:2px solid #ccc;
+float:left;
+font-size:14px;
+padding:2px;
+width:250px;
+}
+
+#main form select {
+border:2px solid #ccc;
+float:left;
+font-size:14px;
+padding:1.5px;
+width:258px;
+}
+
+#main form input[type=submit] {
+float:left;
+margin-bottom:10px;
+margin-left:175px;
+margin-right:10px;
+}
+
+#main h3 {
+height:20px;
+padding-top:10px;
+}
+
+#main h3 .actions {
+display:none;
+font-size:10px;
+font-weight:400;
+}
+
+#main h3:hover .actions {
+display:inline;
+}
+
+.field_with_errors {
+display:table;
+float:left;
+margin:0 10px 0 0;
+width:100px;
+}
+
+#main form .field_with_errors label {
+border:2px solid red;
+margin-right:0;
+}
+
+#main form .field_with_errors input,#main form .field_with_errors textarea {
+border:2px solid red;
+width:250px;
+}
+
+#error_explanation {
+background-color:#f0f0f0;
+border:2px solid red;
+margin:0;
+padding:7px 7px 12px;
+width:413px;
+}
+
+#error_explanation h2 {
+background-color:#c00;
+color:#fff;
+font-size:12px;
+font-weight:700;
+margin:-7px;
+padding:5px 5px 5px 15px;
+text-align:left;
+}
+
+#error_explanation p {
+color:#333;
+margin:0;
+padding:5px;
+}
+
+#error_explanation ul li {
+font-size:12px;
+list-style:square;
+}

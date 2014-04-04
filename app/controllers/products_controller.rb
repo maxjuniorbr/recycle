@@ -1,15 +1,11 @@
 class ProductsController < ApplicationController
+  before_action :authenticate
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
   def index
     @products = Product.all
-  end
-
-  # GET /products/1
-  # GET /products/1.json
-  def show
   end
 
   # GET /products/new
@@ -28,7 +24,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to products_path, notice: 'Produto criado com sucesso.' }
         format.json { render action: 'show', status: :created, location: @product }
       else
         format.html { render action: 'new' }
@@ -42,7 +38,7 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to products_path, notice: 'Produto alterado com sucesso.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

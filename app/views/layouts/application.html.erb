@@ -6,12 +6,31 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div>
-	<%= link_to 'Products', :products %>
-	<%= link_to 'Garbages', :garbages %>
-</div>
-<%= yield %>
+<body>	
+	<div id="header">
+		<h1><%= link_to "Recyle", root_path %></h1>
+		<div id="user_bar">
+			<% if logged_in? %>
+				<%= link_to "Lista de lixo", products_path %> |
+				<%= link_to "Lista de classificação de lixo", garbages_path %> |
+				<%= link_to "Alterar senha", edit_user_path(current_user) %> |
+				<%= link_to "Deslogar", logout_path %>
+			<% else %>
+				<%= link_to "Logar", login_path %> | 
+				<%= link_to "Novo usuário", new_user_path %>
+			<% end %>
+		</div>
+	</div>
 
+	<div id="main">
+		<%= content_tag(:p, notice, class: 'notice') if notice.present? %>
+		<%= content_tag(:p, alert, class: 'alert') if alert.present? %>
+
+		<%= yield %>
+	</div>
+
+	<div id="footer">
+		UNIP - Aplicação web desenvolvida para as matérias APS, DAW e TAW
+	</div>
 </body>
 </html>
