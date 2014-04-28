@@ -1,11 +1,16 @@
 class ProductsController < ApplicationController
-  before_action :authenticate
+  before_action :authenticate, except: [:index]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if params[:term]
+      like = "%".concat(params[:term].concat("%"))
+      @products = Product.where("upper(name) like ?", like.upcase)
+    else
+      @products = Product.all
+    end
   end
 
   # GET /products/new

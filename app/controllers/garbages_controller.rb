@@ -1,5 +1,5 @@
 class GarbagesController < ApplicationController
-  before_action :authenticate
+  before_action :authenticate, except: [:index]
   before_action :set_garbage, only: [:show, :edit, :update, :destroy]
 
   # GET /garbages

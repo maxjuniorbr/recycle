@@ -1,2 +1,42 @@
 <h1>Bem vindo!</h1>
-<p>O Recycle te ajuda a jogar o lixo na classificação de lixo certa!</p>
+<p>Recycle seu lixo e salve o planeta!</p>
+<br />
+<br />
+<p>Se você não sabe em qual lixo descartar, nós podemos ajudar!</p>
+<p>Faça a consulta no campo abaixo e descubra em qual lixo descartar</p>
+<br />
+<br />
+<form>
+	<input id='product' type='text' />
+</form>
+<br />
+<br />
+<br />
+<p id='garbage'></p>
+<script type="text/javascript">
+$("#product").autocomplete({
+	source: function (request, response) {
+		$.ajax({
+			url: "/products.json",
+			dataType: "json",
+			data: "term=" + request.term,
+			success: function (data) {
+				response($.map(data, function (item) {
+					return {
+						label: item.name,
+						value: item.name,
+						garbage: item.garbage.name
+					};
+				}));
+			}});
+    },
+    minLength: 2,
+    select: function (event, ui) {
+    	$('#garbage').empty().append("Descarte em: " + ui.item.garbage)
+    },
+    open: function () {
+    },
+    close: function () {
+    }
+});
+</script>
