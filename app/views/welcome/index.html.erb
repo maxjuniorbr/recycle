@@ -1,42 +1,77 @@
-<h1>Bem vindo!</h1>
-<p>Recycle seu lixo e salve o planeta!</p>
-<br />
-<br />
-<p>Se você não sabe em qual lixo descartar, nós podemos ajudar!</p>
-<p>Faça a consulta no campo abaixo e descubra em qual lixo descartar</p>
-<br />
-<br />
-<form>
-	<input id='product' type='text' />
-</form>
-<br />
-<br />
-<br />
-<p id='garbage'></p>
+<h1 class="hidden_text" id="itTitle">Recicle seus lixos. E salve o planeta</h1>
+
+<div id="boxArvore">
+	<img id="imgArvore" src="assets\arvore.png" alt="Árvore" />
+</div>
+
+<div id="boxSearch">
+	<p class="info">Se você não sabe em qual lixo descartar, nós podemos ajudar!<br/>
+		Faça a consulta no campo abaixo e descubra.</p>
+		<input type="text" class="elInput" id="autocomplete" placeholder="Ex: lata de refrigerante" />
+</div>
+
+<div id="boxRecycle">
+	<p>Descarte no lixo:</p>
+	<span class="itLixo" id="noLixo"></span>
+</div>
+
 <script type="text/javascript">
-$("#product").autocomplete({
-	source: function (request, response) {
-		$.ajax({
-			url: "/products.json",
-			dataType: "json",
-			data: "term=" + request.term,
-			success: function (data) {
-				response($.map(data, function (item) {
-					return {
-						label: item.name,
-						value: item.name,
-						garbage: item.garbage.name
-					};
-				}));
-			}});
-    },
-    minLength: 2,
-    select: function (event, ui) {
-    	$('#garbage').empty().append("Descarte em: " + ui.item.garbage)
-    },
-    open: function () {
-    },
-    close: function () {
-    }
-});
+	$('#boxRecycle').hide();
+	var recycle = $("#autocomplete").autocomplete({
+		source: function (request, response) {
+			$.ajax({
+				url: "/products.json",
+				dataType: "json",
+				data: "term=" + request.term,
+				success: function (data) {
+					response($.map(data, function (item) {
+						return {
+							label: item.name,
+							value: item.name,
+							garbage: item.garbage.name
+						};
+					}));
+				}});
+		},
+		select: function (event, ui) {
+			var idImg = null;
+			switch(ui.item.garbage) {
+				case 'Lixo orgânico':
+					$('#boxRecycle').show();
+					idImg = 'organico';
+					break;
+				case 'Lixo de papéis':
+					$('#boxRecycle').show();
+					idImg = 'papel';
+					break;
+				case 'Lixo de metais':
+					$('#boxRecycle').show();
+					idImg = 'metal';
+					break;
+				case 'Lixo de vidros':
+					$('#boxRecycle').show();
+					idImg = 'vidro';
+					break;
+				case 'Lixo de plásticos':
+					$('#boxRecycle').show();
+					idImg = 'plastico';
+					break;
+				default:
+					$('#boxRecycle').hide();
+					break;
+			}
+			$('#boxRecycle span').attr('id', idImg);
+		},
+		change: function(event,ui) {
+			if (ui.item == null || ui.item == undefined) {
+        $('#boxRecycle').hide();
+        $("#autocomplete").val("");
+        $("#autocomplete").attr("disabled", false);
+      } 
+		}
+	});
+
+	$(function(){
+		recycle.init();
+	});
 </script>

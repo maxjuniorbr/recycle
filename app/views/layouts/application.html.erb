@@ -2,14 +2,14 @@
 <html>
 <head>
   <title>Recycle</title>
-  <%= stylesheet_link_tag    "application", "jquery-ui-1.10.4.custom.min", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", "jquery-ui-1.10.4.custom.min", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "jquery-ui-1.10.4.custom.min", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>	
 	<div id="header">
-		<h1><%= link_to "Recyle", root_path %></h1>
-		<div id="user_bar">
+		<div>
+			<%= link_to "Home", root_path %> |
 			<% if logged_in? %>
 				<%= link_to "Lista de lixo", products_path %> |
 				<%= link_to "Lista de classificação de lixo", garbages_path %> |
@@ -21,16 +21,12 @@
 			<% end %>
 		</div>
 	</div>
-
-	<div id="main">
+	<div id="noticeAlert">
 		<%= content_tag(:p, notice, class: 'notice') if notice.present? %>
 		<%= content_tag(:p, alert, class: 'alert') if alert.present? %>
-
+	</div>
+	<div id="main">		
 		<%= yield %>
 	</div>
-
-	<footer>
-				
-	</footer>	
 </body>
 </html>

@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function msieversion() {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+
+    if (msie > 0) {
+      alert("Site homologado para os navegadores Internet Explorer 11 ou Chrome.");
+    }
+
+    return false;
+}
+
+msieversion();

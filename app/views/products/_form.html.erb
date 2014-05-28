@@ -1,8 +1,6 @@
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "erro") %>:</h2>
-
       <ul>
       <% @product.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,19 +8,19 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name, 'Nome' %><br>
-    <%= f.text_field :name %>
+  <br />
+  <div class="field_alt">
+    <%= f.text_field :name, placeholder: 'Nome' %>
   </div>
-  <div class="field">
-    <%= f.label :image, 'Imagem' %><br>
-    <%= f.text_field :image %>
+  <br />
+  <div class="field_alt">
+    <%= f.text_field :image, placeholder: 'Imagem' %>
   </div>
-  <div class="field">
-    <%= f.label :garbage_id, 'Classificação do lixo' %><br>
+  <br />
+  <div class="field_alt">
     <%= f.collection_select :garbage_id, Garbage.all, :id, :name %>
   </div>
+  <br />
   <div class="actions">
     <%= f.submit "Salvar" %> ou <%= link_to 'Voltar', products_path, :class => 'cancel' %>
   </div>

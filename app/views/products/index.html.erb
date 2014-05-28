@@ -1,4 +1,4 @@
-<h1>Lista de lixo</h1>
+<h1 id="actionTitle">Lista de lixo</h1>
 
 <table>
   <thead>
@@ -6,7 +6,6 @@
       <th>Nome</th>
       <th>Imagem</th>
       <th>Classificação do lixo</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -24,7 +23,7 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'Novo lixo', new_product_path %>
+<div class="actions">
+  <%= link_to 'Novo lixo', new_product_path %>
+</div>

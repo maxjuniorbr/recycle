@@ -1,11 +1,10 @@
-<h1>Lista de classificação</h1>
+<h1 id="actionTitle">Lista de classificação</h1>
 
 <table>
   <thead>
     <tr>
       <th>Nome</th>
       <th>Imagem</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -22,7 +21,7 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'Nova classificação', new_garbage_path %>
+<div class="actions">
+  <%= link_to 'Nova classificação', new_garbage_path %>
+<div>

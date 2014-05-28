@@ -1,237 +1,269 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
+    background:transparent;
+    border:0;
+    font-size:100%;
+    margin:0;
+    outline:0;
+    padding:0;
+    vertical-align:baseline;
+}
 
-* {
-margin:0 auto;
+body,html {
+    height:100%;
+    overflow:hidden;
+    width:100%;
 }
 
 body {
-background-color:#fff;
-color:#333;
-}
-
-body,p,ol,ul,td {
-font-family:verdana, arial, helvetica, sans-serif;
-font-size:13px;
-line-height:18px;
-}
-
-pre {
-background-color:#eee;
-font-size:11px;
-padding:10px;
-}
-
-p {
-padding:5px;
+    background:url(grama.jpg) repeat-x center bottom #fff;
+    color:#444;
+    font-family:Arial, Verdana, Sans-Serif;
+    font-size:14px;
 }
 
 a {
-color:#D95E16;
-padding:0 2px;
-text-decoration:none;
+    color:#777;
+    text-decoration:none;
 }
 
 a:hover {
-background-color:#FF813C;
-color:#FFF;
+    -moz-opacity:.8;
+    -moz-transition:all .5s;
+    -o-opacity:.8;
+    -o-transition:all .5s;
+    -webkit-opacity:.8;
+    -webkit-transition:all .5s;
+    color:#999;
+    opacity:.8;
+    transition:all .5s;
 }
 
-.notice {
-color:green;
+ul {
+    list-style: none;
 }
 
-.alert {
-color:red;
+.clear {
+    clear:both;
 }
 
-#header,#main,#footer {
-width:800px;
+.hidden_text {
+    text-indent:-9000px;
+}
+
+#main {
+    border:1px solid transparent;
+    height:100%;
+    margin:0 auto;
+    width:990px;
 }
 
 #header {
-border-bottom:5px solid #333;
-color:#333;
-font-family:"Myriad Web Pro",Helvetica,Arial,sans-serif;
-height:35px;
-letter-spacing:1px;
-padding:15px 0;
+    background-color:#f6f6f6;
+    border-bottom:2px solid #ccc;
+    color:#777;
+    font-weight:700;
+    line-height:40px;
+    position:absolute;
+    text-align:right;
+    width:100%;
 }
 
-#header #user_bar {
-float:right;
-font-size:10px;
+#header > div {
+    margin-right:10px;
 }
 
-#footer {
-border-top:5px solid #C1C1C1;
-clear:both;
-font-size:11px;
-margin-top:10px;
-padding:10px 0;
-text-align:center;
+/*Estilos home*/
+
+#itTitle {
+    background:url(itGeneral.jpg) no-repeat right center;
+    display:block;
+    height:109px;
+    margin-top:50px;
+    width:100%;
 }
 
-#header h1 {
-float:left;
-font-size:30px;
-padding-top:14px;
+#boxArvore {
+    bottom:0;
+    position:absolute;
+    text-align:right;
+    width:990px;
 }
 
-#header h1 a {
-color:#000;
+#boxSearch {
+    position:absolute;
+    text-align:center;
+    top:50%;
+    width:600px;
 }
 
-#header h1 a:hover {
-background-color:#FFF;
-border-bottom:4px solid #ccc;
-color:#000;
+#boxSearch > p {
+    font-size:16px;
+    font-weight:700;
+    padding:10px;
 }
 
-#header p {
-float:right;
+.elInput {
+    -ms-border-radius:7px;
+    border:2px solid #999;
+    border-radius:7px;
+    color:#548f31;
+    font-size:20px;
+    font-weight:700;
+    height:50px;
+    padding:0 10px;
+    width:420px;
 }
 
-#main h1 {
-border-bottom:1px solid #bbb;
-font-size:16px;
-margin-bottom:10px;
-padding:10px 0;
+#boxRecycle {
+    bottom:0;
+    font-size:16px;
+    font-weight:700;
+    height:100px;
+    position:absolute;
+    width:990px;
 }
 
-#main table {
-margin:0;
+.itLixo {
+    background:url(itLixo.png) no-repeat 0 0;
+    bottom:5px;
+    display:block;
+    height:130px;
+    margin-left:200px;
+    position:absolute;
+    width:81px;
 }
 
-#main form {
-text-align:left;
+#papel {
+    background-position:0 0;
 }
 
-#main form br {
-display:none;
-float:left;
+#metal {
+    background-position:-81px 0;
+    width:79px;
 }
 
-#main form label {
-background-color:#F0F0F0;
-border:2px solid #ccc;
-display:block;
-float:left;
-line-height:21px;
-margin-right:10px;
-padding-right:10px;
-text-align:right;
-vertical-align:center;
-width:150px;
+#plastico {
+    background-position:-160px 0;
 }
 
-#main form label.check_box_label {
-background-color:#FFF;
-border:none;
-display:inline;
-line-height:21px;
-padding-right:10px;
-text-align:right;
-vertical-align:center;
-width:auto;
+#vidro {
+    background-position:-241px 0;
+    width:79px;
 }
 
-#main form .field,#main form .actions {
-clear:both;
-padding-top:10px;
+#organico {
+    background-position:-322px 0;
+    width:81px;
 }
 
-#main form input[type=text],#main form input[type=password],#main form textarea {
-border:2px solid #ccc;
-float:left;
-font-size:14px;
-padding:2px;
-width:250px;
+#noLixo {
+    height:0;
+    width:0;
 }
 
-#main form select {
-border:2px solid #ccc;
-float:left;
-font-size:14px;
-padding:1.5px;
-width:258px;
+/* Estilos app */
+
+#noticeAlert {
+    margin-top:45px;
+    margin-left: 4px;
+    width: 99.5%;    
+    text-align: center;
+    line-height: 25px;
 }
 
-#main form input[type=submit] {
-float:left;
-margin-bottom:10px;
-margin-left:175px;
-margin-right:10px;
+#noticeAlert > p {
+    width: 100%;
+    display: block;    
 }
 
-#main h3 {
-height:20px;
-padding-top:10px;
+#noticeAlert > .notice { 
+    color: green;    
+    background-color: #E9F7E9;
+    border: 1px solid #A7F8A8;
 }
 
-#main h3 .actions {
-display:none;
-font-size:10px;
-font-weight:400;
-}
-
-#main h3:hover .actions {
-display:inline;
-}
-
-.field_with_errors {
-display:table;
-float:left;
-margin:0 10px 0 0;
-width:100px;
-}
-
-#main form .field_with_errors label {
-border:2px solid red;
-margin-right:0;
-}
-
-#main form .field_with_errors input,#main form .field_with_errors textarea {
-border:2px solid red;
-width:250px;
+#noticeAlert > .alert { 
+    color: red;
+    background-color: #F7F0ED;
+    border: 1px solid #F6D8CE;
 }
 
 #error_explanation {
-background-color:#f0f0f0;
-border:2px solid red;
-margin:0;
-padding:7px 7px 12px;
-width:413px;
+    margin-top:10px;
+    width: 100%;    
+    text-align: center;
+    line-height: 25px;
+    border: 1px solid red;
 }
 
-#error_explanation h2 {
-background-color:#c00;
-color:#fff;
-font-size:12px;
-font-weight:700;
-margin:-7px;
-padding:5px 5px 5px 15px;
-text-align:left;
+.centerBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;    
+    text-align: center;
+    padding: 20px;
 }
 
-#error_explanation p {
-color:#333;
-margin:0;
-padding:5px;
+#loginBox {
+    width: 500px;
+    height: 180px;
+    margin-left: -250px;
+    margin-top: -90px;
 }
 
-#error_explanation ul li {
-font-size:12px;
-list-style:square;
+#passwordBox {
+    width: 500px;
+    height: 250px;
+    margin-left: -250px;
+    margin-top: -125px;
+}
+
+.alt_actions > input {
+    padding: 7px;
+    font-size: 17px;
+}
+
+.actions {
+    font-size: 16px;
+    border: 2px solid #f0f0f0;
+    padding: 3px;
+    font-weight: 700;
+}
+
+#actionTitle {
+    padding-top: 15px;
+    font-size: 16px;
+    width: 100%;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+#main > table {
+    font-size: 16px;
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+    border: 2px solid #f0f0f0;
+}
+
+#main > table th, #main > table td {    
+    line-height: 40px;
+    padding-left: 3px;
+}
+
+#main > table td {
+    background-color: #f9f9f9;
+}
+
+#main > table th {
+    background-color: #f0f0f0;   
+}
+
+.field_alt input {
+    padding: 5px;
+    width: 300px;
+}
+
+.field_alt select {
+    padding: 5px;
+    width: 315px;
 }
