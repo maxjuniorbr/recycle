@@ -9,7 +9,7 @@
 <body>	
 	<div id="header">
 		<div>
-			<%= link_to "Home", root_path %> |
+			<%= link_to "Home", root_path %> |			
 			<% if logged_in? %>
 				<%= link_to "Lista de lixo", products_path %> |
 				<%= link_to "Lista de classificação de lixo", garbages_path %> |
@@ -19,6 +19,7 @@
 				<%= link_to "Logar", login_path %> | 
 				<%= link_to "Novo usuário", new_user_path %>
 			<% end %>
+			| <%= link_to "Sobre", "/about/index" %>
 		</div>
 	</div>
 	<div id="noticeAlert">
