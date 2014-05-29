@@ -1,5 +1,4 @@
 <h1 id="actionTitle">Lista de classificação</h1>
-
 <table>
   <thead>
     <tr>
@@ -9,19 +8,22 @@
       <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @garbages.each do |garbage| %>
-      <tr>
-        <td><%= garbage.name %></td>
-        <td><%= garbage.image %></td>
-        <td><%= link_to 'Editar', edit_garbage_path(garbage) %></td>
-        <td><%= link_to 'Apagar', garbage, method: :delete, data: { confirm: 'Confirma?' } %></td>
-      </tr>
+    <tr>
+      <td><%= garbage.name %></td>
+      <td><%= garbage.image %></td>
+      <td><%= link_to 'Editar', edit_garbage_path(garbage) %></td>
+      <td><%= link_to 'Apagar', garbage, method: :delete, data: { confirm: 'Confirma?' } %></td>
+    </tr>
     <% end %>
   </tbody>
-</table>
-<br>
+</table><br />
 <div class="actions">
-  <%= link_to 'Nova classificação', new_garbage_path %>
+  <table width="100%">
+    <tr>
+      <td><%= link_to 'Nova classificação', new_garbage_path %></td>
+      <td align="right"><%= paginate @garbages, :left => 1, :right => 3 %></td>
+    </tr>
+  </table>
 <div>

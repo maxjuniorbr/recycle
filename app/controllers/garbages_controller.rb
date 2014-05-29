@@ -5,7 +5,7 @@ class GarbagesController < ApplicationController
   # GET /garbages
   # GET /garbages.json
   def index
-    @garbages = Garbage.all
+    @garbages = Garbage.all.page(params[:page]).per(5)
   end
 
   # GET /garbages/new

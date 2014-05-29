@@ -25,5 +25,10 @@
 </table>
 <br>
 <div class="actions">
-  <%= link_to 'Novo lixo', new_product_path %>
+  <table width="100%">
+    <tr>
+      <td> <%= link_to 'Novo lixo', new_product_path %></td>
+      <td align="right"><%= paginate @products, :left => 1, :right => 3 %></td>
+    </tr>
+  </table> 
 </div>

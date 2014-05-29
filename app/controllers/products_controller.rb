@@ -7,9 +7,9 @@ class ProductsController < ApplicationController
   def index
     if params[:term]
       like = "%".concat(params[:term].concat("%"))
-      @products = Product.where("upper(name) like ?", like.upcase)
+      @products = Product.where("upper(name) like ?", like.upcase).page(params[:page]).per(5)
     else
-      @products = Product.all
+      @products = Product.all.page(params[:page]).per(5)
     end
   end
 
